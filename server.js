@@ -1,7 +1,18 @@
 var express 	= require('express'),
 	app			= express(),
 	port		= process.env.PORT || 3000,
-	bodyParser	= require('body-parser')
+	bodyParser	= require('body-parser'),
+	mongoose  	= require('mongoose'),
+	database 	= require('./config/database')
+
+mongoose.connect(database.url);
+
+//Test for connection success
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Connection error: '));
+db.once('open', function callback () {
+	console.log('Successfully connected to MongoDB');
+})
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -10,14 +21,6 @@ app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 
-///////////////////////////////////////////////////////
-var router  = express.Router();
-
-app.get('*', function(request, response){
-	response.render('index');
-});
-
-app.use('/', router);
 ///////////////////////////////////////////////////////
 
 require('./server/routes.js')(app);
