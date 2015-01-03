@@ -16,10 +16,13 @@ db.once('open', function callback () {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+// app.use(express.bodyParser());
 
 app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
+
+//////////////////NEW PROJECT CONTROLLER ///////////////
 
 ///////////////////////////////////////////////////////
 

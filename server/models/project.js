@@ -3,8 +3,9 @@ var mongoose 	= require('mongoose'),
 
 var ProjectSchema = new Schema({
 
-	name: String,
-	link: String
+	projectname: 'String',
+	projectlink: 'String',
+	projectimage: 'String'
 
 });
 

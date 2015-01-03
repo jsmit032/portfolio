@@ -15,6 +15,7 @@ function postProject (request, response) {
 
 	project.name = request.body.name;
 	project.link = request.body.link;
+	project.image = request.body.image;
 
 	project.save(function(error){
 		if (error) console.log(error);
@@ -30,6 +31,7 @@ function updateProject (request, response) {
 			if (error) console.log(error);
 			project.name = request.body.name;
 			project.link = request.body.link;
+			project.image = request.body.image;
 
 			project.save(function(error){
 				response.status(202).json({ message: 'project was successfully updated!' });
@@ -48,6 +50,27 @@ function deleteProject (request, response) {
 		}
 	);
 
+}
+
+function addProject (request, response) {
+
+	console.log('in the signup controller');
+	console.log(request.body.projectname);
+	console.log(request.body.projectlink);
+
+	var newProject = new Project();
+
+	newProject.projectname = request.body.projectname;
+	newProject.projectlink = request.body.projectlink;
+
+	newProject.save(function(error){
+		if (error) console.log('Unable to save new project b/c: ', error);
+		console.log('Project Saved!');
+		console.log(newProject);
+	});
+
+	response.redirect('/');
+
 };
 
 module.exports = {
@@ -55,6 +78,7 @@ module.exports = {
 	getProject: getProject,
 	postProject: postProject,
 	updateProject: updateProject,
-	deleteProject: deleteProject
+	deleteProject: deleteProject,
+	addProject: addProject
 
 }
