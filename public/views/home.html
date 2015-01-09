@@ -5,28 +5,28 @@
       <h1>Flapper News</h1>
     </div>
 
-    <div ng-repeat="post in posts | orderBy:'-upvotes'">
+    <div ng-repeat="project in projects | orderBy:'-upvotes'">
       <span class="glyphicon glyphicon-thumbs-up"
-        ng-click="incrementUpvotes(post)"></span>
-      {{post.upvotes}}
+        ng-click="incrementUpvotes(project)"></span>
+      {{project.upvotes}}
 
       <span style="font-size:20px; margin-left:10px;">
-        <a ng-show="post.link" href="{{post.link}}">
-          {{post.title}}
+        <a ng-show="project.link" href="{{project.link}}">
+          {{project.title}}
         </a>
 
-        <span ng-hide="post.link">
-          {{post.title}}
+        <span ng-hide="project.link">
+          {{project.title}}
         </span>
 
         <span>
-  				<a href="#/posts/{{$index}}">Comments</a>
+  				<a href="#/projects/{{$index}}">Comments</a>
 				</span>
 			</span>
     </div>
 
-    <form ng-submit="addPost()" style="margin-top:30px">
-      <h3>Add a new post</h3>
+    <form ng-submit="addProject()" style="margin-top:30px">
+      <h3>Add a new project</h3>
 
       <div class="form-group">
         <input type="text"
@@ -49,8 +49,8 @@
 </div>
 
 	
-<!-- Node Database Entry 	<form action="" method="post">
+  <form action="" method="post">
 		<input type="text" name="projectname" placeholder="name">
 		<input type="text" name="projectlink" placeholder="link">
 		<input type="submit" value="Add Project">
-	</form> -->
+	</form>

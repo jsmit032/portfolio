@@ -1,15 +1,20 @@
 var Project 			= require('./models/project.js'),
-	projectController 	= require('./controllers/projects-controller.js');
+	projectController 	= require('./controllers/projects-controller.js'),
+	Comment				= require('./models/Comments.js');
 
 module.exports = function(app) {
 	// Project api routes
-	app.get('/projects', projectController.getProject); 
+	app.get('/api/projects', projectController.getProject);  //index projects
 
-	app.post('/projects', projectController.postProject);
+	app.get('/api/projects/:id', projectController.showProject); //show project
 
-	app.put('/projects/:id', projectController.updateProject);
+	app.post('/api/projects', projectController.postProject); //create project
 
-	app.delete('/projects/:id', projectController.deleteProject);
+	app.put('/api/projects/:id', projectController.updateProject); //update project
+
+	app.delete('/api/projects/:id', projectController.deleteProject); //delete project
+
+	app.put('/api/projects/:id/upvote', projectController.upvoteProject); //uses upvote method from model to add votes
 
 	//Project functionality 
 	app.post('/', projectController.addProject);

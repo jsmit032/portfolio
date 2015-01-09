@@ -4,18 +4,18 @@
 		<div class="page-header">
 			<h3>
 
-			  <a ng-show="post.link" href="{{post.link}}">
-			    {{post.title}}
+			  <a ng-show="project.link" href="{{project.link}}">
+			    {{project.title}}
 			  </a>
 
-			  <span ng-hide="post.link">
-			    {{post.title}}
+			  <span ng-hide="project.link">
+			    {{project.title}}
 			  </span>
 
 			</h3>
 		</div>
 
-		<div ng-repeat="comment in post.comments | orderBy:'-upvotes'">
+		<div ng-repeat="comment in project.comments | orderBy:'-upvotes'">
 
 			<span class="glyphicon glyphicon-thumbs-up"
 			  ng-click="incrementUpvotes(comment)"></span>

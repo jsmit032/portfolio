@@ -11,10 +11,10 @@ angular.module('Portfolio', ['ui.router'])
 			controller: 'HomeController'
 		})
 
-		.state('posts', {
-			url: '/posts/{id}',
-			templateUrl: 'views/posts.html',
-			controller: 'PostsCtrl'
+		.state('projects', {
+			url: '/projects/{id}',
+			templateUrl: 'views/projects.html',
+			controller: 'ProjectCtrl'
 		})
 
 		.state('about', {
@@ -24,26 +24,26 @@ angular.module('Portfolio', ['ui.router'])
 
 }])
 
-.factory('posts', [function(){
+.factory('projects', [function(){
 	var o = {
-		posts: []
+		projects: []
 	};
 	return o;
 }])
 
-.controller('HomeController', ['$scope', 'posts', function($scope, posts){
+.controller('HomeController', ['$scope', 'projects', function($scope, projects){
 	
-	$scope.posts = posts.posts;
+	$scope.projects = projects.projects;
 
-	$scope.addPost = function(){
+	$scope.addProject = function(){
 		if(!$scope.title || $scope.title === '') { return; }
 
-		$scope.posts.push({
+		$scope.projects.push({
 			title: $scope.title,
 			link: $scope.link,
 			upvotes: 0,
 			comments: [
-				{author: 'Joe', body: 'Cool post!', upvotes: 0},
+				{author: 'Joe', body: 'Cool project!', upvotes: 0},
 				{author: 'Bob', body: 'Great idea but everything is wrong!', upvotes: 0}
 			]
 		});
@@ -52,21 +52,21 @@ angular.module('Portfolio', ['ui.router'])
 		$scope.link = '';
 	};
 
-	$scope.incrementUpvotes = function(post) {
-		post.upvotes += 1;
+	$scope.incrementUpvotes = function(project) {
+		project.upvotes += 1;
 	};
 
 
 
 }])
 
-.controller('PostsCtrl', ['$scope', '$stateParams', 'posts', function($scope, $stateParams, posts){
+.controller('ProjectCtrl', ['$scope', '$stateParams', 'projects', function($scope, $stateParams, projects){
 
-	$scope.post = posts.posts[$stateParams.id];
+	$scope.project = projects.projects[$stateParams.id];
 
 	$scope.addComment = function(){
 	  if($scope.body === '') { return; }
-	  $scope.post.comments.push({
+	  $scope.project.comments.push({
 	    body: $scope.body,
 	    author: 'user',
 	    upvotes: 0
