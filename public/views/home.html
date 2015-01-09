@@ -1,56 +1,233 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<link rel="stylesheet" type="text/css" href="../stylesheet/landing.css">
 
-    <div class="page-header">
-      <h1>Flapper News</h1>
-    </div>
+	<!-- Preloader -->
+	<!-- <div id="preloader">
+		<div id="loader">
+			 <div class="dot"></div>
+			 <div class="dot"></div>
+			 <div class="dot"></div>
+			 <div class="dot"></div>
+			 <div class="dot"></div>
+			 <div class="dot"></div>
+			 <div class="dot"></div>
+			 <div class="dot"></div>
+			 <div class="lading"></div>
+		</div>
+	</div> --><!-- /#preloader -->
+	<!-- Preloader End-->
 
-    <div ng-repeat="project in projects | orderBy:'-upvotes'">
-      <span class="glyphicon glyphicon-thumbs-up"
-        ng-click="incrementUpvotes(project)"></span>
-      {{project.upvotes}}
 
-      <span style="font-size:20px; margin-left:10px;">
-        <a ng-show="project.link" href="{{project.link}}">
-          {{project.title}}
-        </a>
+	<!-- Main Menu -->
+	<div id="main-menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
+				
+		<div class="navbar-header">
+			<!-- responsive navigation -->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<i class="fa fa-bars"></i>
+			</button> <!-- /.navbar-toggle -->
+				
+		</div> <!-- /.navbar-header -->
 
-        <span ng-hide="project.link">
-          {{project.title}}
-        </span>
-
-        <span>
-  				<a href="#/projects/{{$index}}">Comments</a>
-				</span>
-			</span>
-    </div>
-
-    <form ng-submit="addProject()" style="margin-top:30px">
-      <h3>Add a new project</h3>
-
-      <div class="form-group">
-        <input type="text"
-          class="form-control"
-          placeholder="Title"
-          ng-model="title"></input>
-      </div>
-
-      <div class="form-group">
-        <input type="text"
-        class="form-control"
-        placeholder="Link"
-        ng-model="link"></input>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Post</button>
-    </form>
-
-  </div>
-</div>
-
+		<nav class="collapse navbar-collapse">
+			<!-- Main navigation -->
+			<ul id="headernavigation" class="nav navbar-nav">
+				<li class="active"><a href="#page-top">Home</a></li>	
+				<li><a href="#about">About</a></li>
+			</ul> <!-- /.nav .navbar-nav -->
+		</nav> <!-- /.navbar-collapse  -->
+	</div><!-- /#main-menu -->
+	<!-- Main Menu End -->
 	
-  <form action="" method="post">
-		<input type="text" name="projectname" placeholder="name">
-		<input type="text" name="projectlink" placeholder="link">
-		<input type="submit" value="Add Project">
-	</form>
+
+	<!-- Page Top Section -->
+	<section id="page-top" class="section-style" data-background-image="http://i.imgur.com/10YphqD.jpg">
+		<div class="pattern height-resize">
+			<div class="container">
+				<h1 class="site-title">
+					Jennifer's Portfolio
+				</h1><!-- /.site-title -->
+				<h3 class="section-name">
+					<span>
+						Is
+					</span>
+				</h3><!-- /.section-name -->
+				<h2 class="section-title">
+					Coming Soon
+				</h2><!-- /.Section-title  -->
+				<div id="time_countdown" class="time-count-container">
+
+					<div class="col-sm-3">
+						<div class="time-box">
+							<div class="time-box-inner dash days_dash animated" data-animation="rollIn" data-animation-delay="300">
+								<span class="time-number">
+									<span class="digit">0</span>
+									<span class="digit">0</span>
+									<span class="digit">0</span>
+								</span>
+								<span class="time-name">Days</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="time-box">
+							<div class="time-box-inner dash hours_dash animated" data-animation="rollIn" data-animation-delay="600">
+								<span class="time-number">
+									<span class="digit">0</span>
+									<span class="digit">0</span>	
+								</span>
+								<span class="time-name">Hours</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="time-box">
+							<div class="time-box-inner dash minutes_dash animated" data-animation="rollIn" data-animation-delay="900">
+								<span class="time-number">
+									<span class="digit">0</span>
+									<span class="digit">0</span>
+								</span>
+								<span class="time-name">Minutes</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="time-box">
+							<div class="time-box-inner dash seconds_dash animated" data-animation="rollIn" data-animation-delay="1200">
+								<span class="time-number">
+									<span class="digit">0</span>
+									<span class="digit">0</span>
+								</span>
+								<span class="time-name">Seconds</span>
+							</div>
+						</div>
+					</div>
+					
+				</div><!-- /.time-count-container -->
+
+				<p class="time-until">
+					<span>Time Until Lanuch</span>
+				</p><!-- /.time-until -->
+
+
+
+				<div class="next-section">
+					<a class="go-to-about"><span></span></a>
+				</div><!-- /.next-section -->
+				
+			</div><!-- /.container -->
+		</div><!-- /.pattern -->		
+	</section><!-- /#page-top -->
+	<!-- Page Top Section  End -->
+
+
+	<!-- About Us Section -->
+	<section id="about" class="section-style" data-background-image="http://i.imgur.com/rge3cIQ.jpg">
+		<div class="pattern height-resize"> 
+			<div class="container">
+				<h3 class="section-name">
+					<span>
+						About Me
+					</span>
+				</h3><!-- /.section-name -->
+				<h2 class="section-title">
+					I Am dedicated
+				</h2><!-- /.Section-title  -->
+				<h4 class="section-description">
+					Connect with me on my media accounts by hovering over my image below.
+				</h4><!-- /.section-description -->
+
+				<div class="team-container">
+					<div class="row">
+
+
+						<div class="col-md-4 col-md-offset-4">
+						<!-- <div class="col-sm-4 .col-sm-offset-12"> -->
+							<div class="team-member">
+								<figure>
+									<img src="http://i.imgur.com/nSSpJlU.jpg" alt="Team Member">
+									<figcaption>
+										<p class="member-name">
+											Jennifer Smith
+										</p><!-- /.member-name -->
+										<p class="designation">
+											Developer 
+										</p><!-- /.designation -->
+
+									</figcaption>
+								</figure>
+								<div class="social-btn-container">
+									<div class="team-socail-btn">
+										<span class="social-btn-box facebook-btn-container">
+											<a href="https://www.facebook.com/jsmit032" class="facebook-btn" target="_blank">
+												<i class="fa fa-facebook"></i>
+											</a><!-- /.facebook-btn -->
+										</span><!-- /.social-btn-box -->
+
+										<span class="social-btn-box twitter-btn-container">
+											<a href="https://twitter.com/jsmit032" class="twitter-btn" target="_blank">
+												<i class="fa fa-twitter"></i>
+											</a><!-- /.twitter-btn -->
+										</span><!-- /.social-btn-box -->
+
+										<span class="social-btn-box linkedin-btn-container">
+											<a href="https://www.linkedin.com/in/smithjenniferl" class="linkedin-btn" target="_blank">
+												<i class="fa fa-linkedin"></i>
+											</a><!-- /.linkedin-btn -->
+										</span><!-- /.social-btn-box -->
+
+										<span class="social-btn-box github-btn-container">
+											<a href="https://github.com/jsmit032?tab=repositories" class="github-btn" target="_blank">
+												<i class="fa fa-github-alt"></i>
+											</a><!-- /.github-btn -->
+										</span><!-- /.social-btn-box -->
+									</div><!-- /.team-socail-btn -->
+								</div><!-- /.social-btn-container -->
+							</div><!-- /.team-member -->
+						</div><!-- /.col-sm-4 -->
+
+
+						
+					</div><!-- /.row -->
+					
+				</div><!-- /.team-container -->
+
+				<div class="next-section">
+					<a class="go-to-subscribe"><span></span></a>
+				</div><!-- /.next-section -->
+
+			</div><!-- /.container -->
+		</div><!-- /.pattern -->
+		
+		
+	</section><!-- /#about -->
+	<!-- About Us Section End -->
+
+
+	<!-- Footer Section -->
+	<footer id="footer-section">
+		<p class="copyright">
+			&copy; <a href="http://jeweltheme.com/html/kite/">Kite</a> 2014-2015, All Rights Reserved. Designed by & Developed by <a href="http://jeweltheme.com">Jewel Theme</a>
+		</p>
+		<p class="copyright">
+			
+		</p>
+	</footer>
+	<!-- Footer Section End -->
+
+
+
+
+
+
+<!-- jQuery Library -->
+<script type="text/javascript" src="http://jeweltheme.com/html/kite/default/assets/js/jquery-2.1.0.min.js"></script>
+<!-- Modernizr js -->
+<script type="text/javascript" src="http://jeweltheme.com/html/kite/default/assets/js/modernizr-2.8.0.min.js"></script>
+<!-- Plugins -->
+<!-- <script type="text/javascript" src="../javascript/plugins.js"></script> -->
+<!-- Custom JavaScript Functions -->
+<script type="text/javascript" src="../javascript/functions.js"></script>

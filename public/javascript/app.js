@@ -4,10 +4,11 @@ angular.module('Portfolio', ['ui.router'])
 
 	$urlRouterProvider.otherwise('/');
 
+	//changing home state for landing page purposes
 	$stateProvider
-		.state('home', {
+		.state('index', {
 			url: '/',
-			templateUrl: 'views/home.html',
+			templateUrl: 'default/index.html',
 			controller: 'HomeController'
 		})
 
@@ -16,11 +17,6 @@ angular.module('Portfolio', ['ui.router'])
 			templateUrl: 'views/projects.html',
 			controller: 'ProjectCtrl'
 		})
-
-		.state('about', {
-			url: '/about',
-			templateUrl: 'views/about.html'
-		});
 
 }])
 
