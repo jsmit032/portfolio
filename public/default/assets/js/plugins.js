@@ -594,7 +594,7 @@ jQuery.extend( jQuery.easing,
 			targetTime.setSeconds(options.targetOffset.sec + targetTime.getSeconds());
 		}
 
-		var nowTime = new Date();
+		var nowTime = Date.now();
 
 		diffSecs = Math.floor((targetTime.valueOf()-nowTime.valueOf())/1000);
 
