@@ -12,11 +12,16 @@ angular.module('Portfolio', ['ui.router'])
 			controller: 'HomeController'
 		})
 
+		.state('project-index', {
+			url: '/project-index',
+			templateUrl: '../views/project-index.html'
+		})
+
 		.state('projects', {
 			url: '/projects/{id}',
-			templateUrl: 'views/projects.html',
+			templateUrl: '../views/projects.html',
 			controller: 'ProjectCtrl'
-		})
+		});
 
 }])
 

@@ -570,7 +570,7 @@ a:focus{
 
 /* 5 - About Us Section
 ---------------------------------------------------------------------- */
-.team-container .col-sm-4{
+.team-container .col-md-4{
 	padding:60px 15px 0 15px;
 }
 .team-container .team-member{
