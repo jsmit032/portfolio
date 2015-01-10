@@ -571,7 +571,7 @@ a:focus{
 /* 5 - About Us Section
 ---------------------------------------------------------------------- */
 .team-container .col-md-4{
-	padding:60px 15px 0 15px;
+	padding:30px 15px 30px 15px;
 }
 .team-container .team-member{
 	max-width:245px;
@@ -702,6 +702,22 @@ a:focus{
 
 .team-container .team-member:hover .social-buttons{
 	top:90px;
+}
+
+form {
+	text-align:center;
+	margin:0;
+}
+
+input {
+	border: 1px solid #3498db;
+	color: #fff;
+	font-size:18px;
+	line-height:40px;
+	display:inline-block;
+	background-color:#3498db;
+	text-transform:uppercase;
+	padding:0px 25px;
 }
 /* 5 - About Us Section End 
 ---------------------------------------------------------------------- */
