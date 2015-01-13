@@ -77,6 +77,7 @@ function deleteProject (request, response) {
 }
 
 function addProject (request, response) {
+	console.log('URL: ' + request.url);
 
 	console.log('in the signup controller');
 	console.log(request.body.projectname);

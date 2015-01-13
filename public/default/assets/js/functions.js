@@ -199,7 +199,7 @@ jQuery(document).ready(function($) {
 
         $.ajax({
             type: "POST",
-            url: "php/contact.php",
+            url: "#",
             data: data_string,
 
             //success
