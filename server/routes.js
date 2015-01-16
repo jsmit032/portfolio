@@ -1,5 +1,6 @@
 var Project 			= require('./models/project.js'),
 	projectController 	= require('./controllers/projects-controller.js'),
+    mailerController    = require('./controllers/mailer-controller.js')
 	Comment				= require('./models/Comments.js');
 
 module.exports = function(app, smtpTransport) {
@@ -18,33 +19,11 @@ module.exports = function(app, smtpTransport) {
 
 	//Project functionality 
 	// app.post('/', projectController.addProject);
-
+    app.post('/mailer', mailerController.sendMail); // send 
 
     // Augular Page renders views/index.ejs
     app.get('*', function(request, response) {
         response.render('index');
     });
 
-    // Code for mailer functionality
-    app.get('/', function(request, response){
-    	response.sendfile('index.html');
-    });
-
-    app.post('/', function(request, response){
-    	console.log("in mail controller");
-    	var mailOptions = {
-    		To: request.body.contact_email,
-    		subject: request.body.subject,
-    		text: request.body.message
-    	}
-    	console.log(mailOptions);
-    	smtpTransport.sendMail(mailOptions, function(error, response){
-    		if (error) {
-    			console.log(error);
-    		} else {
-    			console.log("Message sent: " + response.message);
-    			response.redirect('/');
-    		}
-    	})
-    });
 };

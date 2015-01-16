@@ -109,7 +109,7 @@ jQuery(document).ready(function($) {
         $('.subscribe-error').hide();
 
         var emailReg = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
-        var emailVal = $('#subscribe-email').val();
+        var emailVal = $('#subscribe_email').val();
 
         if (emailVal == "" || emailVal == "Email Address *") {
             $('.subscribe-error').html('<i class="fa fa-exclamation"></i> Email address required.').fadeIn();
@@ -120,7 +120,7 @@ jQuery(document).ready(function($) {
             return false;
         }
 
-        var data_string = $('.news-letter').serialize();
+        var data_string = $('#subscribe_email').serialize();
 
         $('#subscribe-submit').hide();
         $('#subscribe-loading').fadeIn();
@@ -128,7 +128,7 @@ jQuery(document).ready(function($) {
 
         $.ajax({
             type: "POST",
-            url: "php/subscribe.php",
+            url: "/mailer",
             data: data_string,
 
             //success
