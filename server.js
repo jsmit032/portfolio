@@ -5,6 +5,7 @@ var express 	= require('express'),
 	mongoose  	= require('mongoose'),
 	nodemailer	= require('nodemailer'),
 	wellknown	= require('nodemailer-wellknown'),
+	google 		= require('googleapis'),
 	database 	= require('./config/database');
 
 mongoose.connect(database.url);
@@ -24,25 +25,11 @@ app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 
-// Configuring our SMTP Server details
-// Responsible for sending and recieveing email
-var config = wellknown('Gmail');
-var smtpTransport = nodemailer.createTransport({
-	service: "gmail",
-	auth: {
-		XOAuth2: {
-			clientId: '{{client_ID}}',
-			clientSecret: '{{client_secret}}',
-			timeout: 3600
-		}
-	}
-});
-
 //////////////////NEW PROJECT CONTROLLER ///////////////
 
 ///////////////////////////////////////////////////////
 
-require('./server/routes.js')(app, smtpTransport);
+require('./server/routes.js')(app);
 
 app.listen(port);
 
