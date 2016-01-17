@@ -13,8 +13,7 @@
     "merge-descriptors": "2.14.14"
   },
   "engines": {
-    "node": "0.10.x",
-    "npm": "3.5.3"
+    "node": "0.10.x"
   },
   "repository": {
     "type": "git"
